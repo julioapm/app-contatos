@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:app_contatos/contact.dart';
 
-class DetailContact extends StatelessWidget {
+class DetailContactPage extends StatelessWidget {
   final Contact? contact;
 
-  const DetailContact({
+  const DetailContactPage({
     Key? key,
     this.contact,
   }) : super(key: key);

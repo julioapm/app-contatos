@@ -24,7 +24,8 @@ class _ListPageState extends State<ListPage> {
         itemBuilder: (context, index){
           return GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => DetailContact(contact: contacts[index])));
+              //Navigator.push(context, MaterialPageRoute(builder: (context) => DetailContact(contact: contacts[index])));
+              Navigator.pushNamed(context, '/detalhar', arguments: contacts[index]);
             },
             child: Container(
               color: Colors.transparent,
@@ -55,7 +56,8 @@ class _ListPageState extends State<ListPage> {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () async {
-          var contact = await Navigator.push(context, MaterialPageRoute(builder: (context) => const AddContactPage()));
+          //var contact = await Navigator.push(context, MaterialPageRoute(builder: (context) => const AddContactPage()));
+          var contact = await Navigator.pushNamed<Contact>(context, '/adicionar');
           if(contact != null){
             setState(() => contacts.add(contact));
           }

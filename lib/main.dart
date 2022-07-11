@@ -1,3 +1,5 @@
+import 'package:app_contatos/add_contact_page.dart';
+import 'package:app_contatos/detail_contact.dart';
 import 'package:app_contatos/list_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const ListPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const ListPage(),
+        '/adicionar': (context) => const AddContactPage(),
+        '/detalhar': (context) => const DetailContactPage(),
+      },
     );
   }
 }
